@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-space: 'Space Grotesk', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-ink-950 text-ink-100 font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-electric-500/30 text-electric-300;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-ink-950; }
+  ::-webkit-scrollbar-thumb { @apply bg-ink-700 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-electric-600; }
+}
+
+@layer components {
+  .container-max {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+  .section-light {
+    @apply bg-ink-50 text-ink-900;
+  }
+  .tag-pill {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-signal-500 hover:bg-signal-400 text-white font-bold rounded-xl transition-all shadow-lg hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-electric-500/50 text-electric-400 hover:bg-electric-500/10 font-bold rounded-xl transition-all;
+  }
+  .card-dark {
+    @apply bg-ink-900 border border-ink-700 rounded-2xl p-6;
+  }
+  .glow-electric {
+    box-shadow: 0 0 40px rgba(6,182,212,0.15);
+  }
+}
