@@ -8,10 +8,11 @@
     --font-inter: 'Inter', sans-serif;
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
 
   body {
     @apply bg-ink-950 text-ink-100 font-body antialiased;
+    overflow-x: hidden;
   }
 
   ::selection {

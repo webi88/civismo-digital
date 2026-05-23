@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ShieldCheck } from "lucide-react";
 
 const LINKS = [
   { label: "¿Qué es?",    href: "/#que-es" },
@@ -19,14 +18,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-electric-500 to-electric-700 flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <span className="block font-heading font-bold text-white text-sm tracking-wide uppercase">Civismo</span>
-                <span className="block font-heading font-bold text-electric-400 text-sm -mt-0.5 tracking-wider uppercase">Digital</span>
-              </div>
+            <div className="mb-4">
+              <img
+                src="/logo-civismo-digital.png"
+                alt="Civismo Digital"
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <p className="text-ink-500 text-xs leading-relaxed max-w-xs">
               Iniciativa ciudadana por una conversación pública libre y responsable en la era digital.
