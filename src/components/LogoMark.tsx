@@ -5,7 +5,7 @@ import { ShieldCheck } from "lucide-react";
 
 export default function LogoMark({ scrolled = false }: { scrolled?: boolean }) {
   const [imgError, setImgError] = useState(false);
-  const src = scrolled ? "/logo-civismo.png" : "/logo-civismo-blanco.png";
+  const src = "/logo-civismo-digital.png";
 
   return (
     <div className="flex items-center gap-2.5">
