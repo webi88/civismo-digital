@@ -14,7 +14,7 @@ export default function LogoMark({ scrolled = false }: { scrolled?: boolean }) {
           key={src}
           src={src}
           alt="Civismo Digital"
-          className="h-14 w-auto object-contain"
+          className={`h-16 w-auto object-contain transition-all duration-300 ${scrolled ? "[filter:brightness(0)_saturate(100%)_invert(18%)_sepia(84%)_saturate(700%)_hue-rotate(178deg)]" : ""}`}
           onError={() => setImgError(true)}
         />
       ) : (
