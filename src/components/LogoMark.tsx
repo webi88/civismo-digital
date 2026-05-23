@@ -14,7 +14,7 @@ export default function LogoMark({ scrolled = false }: { scrolled?: boolean }) {
           key={src}
           src={src}
           alt="Civismo Digital"
-          className="h-9 w-auto object-contain"
+          className="h-14 w-auto object-contain"
           onError={() => setImgError(true)}
         />
       ) : (
