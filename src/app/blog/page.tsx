@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { posts } from "@/lib/posts";
+import { fetchPosts } from "@/lib/supabase";
 import Link from "next/link";
 import { Calendar, Clock } from "lucide-react";
 
@@ -14,7 +14,10 @@ const catColors: Record<string, string> = {
   "Observatorio": "bg-green-500/15 text-green-300 border-green-500/30",
 };
 
-export default function BlogPage() {
+export const revalidate = 60;
+
+export default async function BlogPage() {
+  const posts = await fetchPosts();
   return (
     <>
       <Navbar />

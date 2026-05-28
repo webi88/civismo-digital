@@ -1,24 +1,27 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { posts, getPostBySlug } from "@/lib/posts";
+import { fetchPosts, fetchPost } from "@/lib/supabase";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 
 interface Props { params: { slug: string } }
 
+export const revalidate = 60;
+
 export async function generateStaticParams() {
+  const posts = await fetchPosts();
   return posts.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props) {
-  const post = getPostBySlug(params.slug);
+  const post = await fetchPost(params.slug);
   if (!post) return {};
   return { title: `${post.title} — Civismo Digital`, description: post.excerpt };
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: Props) {
+  const post = await fetchPost(params.slug);
   if (!post) notFound();
 
   return (
